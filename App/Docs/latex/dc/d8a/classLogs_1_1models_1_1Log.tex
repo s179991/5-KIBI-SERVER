@@ -1,0 +1,229 @@
+\hypertarget{classLogs_1_1models_1_1Log}{}\doxysection{Logs.\+models.\+Log Class Reference}
+\label{classLogs_1_1models_1_1Log}\index{Logs.models.Log@{Logs.models.Log}}
+
+
+Database model for device logs.  
+
+
+
+
+Inheritance diagram for Logs.\+models.\+Log\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{df/d69/classLogs_1_1models_1_1Log__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Logs.\+models.\+Log\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{db/d35/classLogs_1_1models_1_1Log__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classLogs_1_1models_1_1Log_af9b98b292981c205555270962a9d4116}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Method that formats data when viewed in an administrator window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classLogs_1_1models_1_1Log_ab5c4a3b2abad4345b300c77cf983a6a3}{Info}} (\mbox{\hyperlink{classLogs_1_1models_1_1Log_a5d3eb88a3955c88835bce734cb3bacf9}{text}})
+\begin{DoxyCompactList}\small\item\em a method that saves log information at the info level \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classLogs_1_1models_1_1Log_a9c0fe80a9368b354ca3d3922111c3e80}{Warn}} (\mbox{\hyperlink{classLogs_1_1models_1_1Log_a5d3eb88a3955c88835bce734cb3bacf9}{text}})
+\begin{DoxyCompactList}\small\item\em a method that saves log information at the warning level \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classLogs_1_1models_1_1Log_a8746bce07107379762f24e24c8065e2d}{Error}} (\mbox{\hyperlink{classLogs_1_1models_1_1Log_a5d3eb88a3955c88835bce734cb3bacf9}{text}})
+\begin{DoxyCompactList}\small\item\em a method that saves log information at the error level \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{classLogs_1_1models_1_1Log_a771ec9d718ac43090337eb410361c07f}{LEVEL\+\_\+\+CHOICE}}
+\item 
+\mbox{\hyperlink{classLogs_1_1models_1_1Log_a935f9c8bc2ac1a9f7f0550974e081cfd}{level}} = models.\+Char\+Field(max\+\_\+length=3, choices=\mbox{\hyperlink{classLogs_1_1models_1_1Log_a771ec9d718ac43090337eb410361c07f}{LEVEL\+\_\+\+CHOICE}}, default=\char`\"{}INF\char`\"{}, null=False)
+\item 
+\mbox{\hyperlink{classLogs_1_1models_1_1Log_a5d3eb88a3955c88835bce734cb3bacf9}{text}} = models.\+Char\+Field(max\+\_\+length=255, null=False)
+\item 
+\mbox{\hyperlink{classLogs_1_1models_1_1Log_acdd9a0af509bf0dfdb590a49b554b740}{registration\+\_\+time}} = models.\+Date\+Time\+Field(default=timezone.\+now, null=False)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Database model for device logs. 
+
+Base class\+: Model The base class that provides access to the format validation methods. 
+
+Definition at line 10 of file models.\+py.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLogs_1_1models_1_1Log_af9b98b292981c205555270962a9d4116}\label{classLogs_1_1models_1_1Log_af9b98b292981c205555270962a9d4116}} 
+\index{Logs.models.Log@{Logs.models.Log}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!Logs.models.Log@{Logs.models.Log}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def Logs.\+models.\+Log.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Method that formats data when viewed in an administrator window. 
+
+\begin{DoxyReturn}{Returns}
+
+
+str formated data 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94     \textcolor{keyword}{def }\_\_str\_\_(self):}
+\DoxyCodeLine{95         date = dateformat.format(self.registration\_time, DATE\_FORMAT)}
+\DoxyCodeLine{96         \textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}[\{date\}] | [\{self.level\}] -\/> \{self.text\}"{}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLogs_1_1models_1_1Log_a8746bce07107379762f24e24c8065e2d}\label{classLogs_1_1models_1_1Log_a8746bce07107379762f24e24c8065e2d}} 
+\index{Logs.models.Log@{Logs.models.Log}!Error@{Error}}
+\index{Error@{Error}!Logs.models.Log@{Logs.models.Log}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily def Logs.\+models.\+Log.\+Error (\begin{DoxyParamCaption}\item[{}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+a method that saves log information at the error level 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & log information\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+bool true if success saving in db, otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLogs_1_1models_1_1Log_ab5c4a3b2abad4345b300c77cf983a6a3}\label{classLogs_1_1models_1_1Log_ab5c4a3b2abad4345b300c77cf983a6a3}} 
+\index{Logs.models.Log@{Logs.models.Log}!Info@{Info}}
+\index{Info@{Info}!Logs.models.Log@{Logs.models.Log}}
+\doxysubsubsection{\texorpdfstring{Info()}{Info()}}
+{\footnotesize\ttfamily def Logs.\+models.\+Log.\+Info (\begin{DoxyParamCaption}\item[{}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+a method that saves log information at the info level 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & log information\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+bool true if success saving in db, otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLogs_1_1models_1_1Log_a9c0fe80a9368b354ca3d3922111c3e80}\label{classLogs_1_1models_1_1Log_a9c0fe80a9368b354ca3d3922111c3e80}} 
+\index{Logs.models.Log@{Logs.models.Log}!Warn@{Warn}}
+\index{Warn@{Warn}!Logs.models.Log@{Logs.models.Log}}
+\doxysubsubsection{\texorpdfstring{Warn()}{Warn()}}
+{\footnotesize\ttfamily def Logs.\+models.\+Log.\+Warn (\begin{DoxyParamCaption}\item[{}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+a method that saves log information at the warning level 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & log information\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+bool true if success saving in db, otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLogs_1_1models_1_1Log_a935f9c8bc2ac1a9f7f0550974e081cfd}\label{classLogs_1_1models_1_1Log_a935f9c8bc2ac1a9f7f0550974e081cfd}} 
+\index{Logs.models.Log@{Logs.models.Log}!level@{level}}
+\index{level@{level}!Logs.models.Log@{Logs.models.Log}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily Logs.\+models.\+Log.\+level = models.\+Char\+Field(max\+\_\+length=3, choices=\mbox{\hyperlink{classLogs_1_1models_1_1Log_a771ec9d718ac43090337eb410361c07f}{LEVEL\+\_\+\+CHOICE}}, default=\char`\"{}INF\char`\"{}, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 19 of file models.\+py.
+
+\mbox{\Hypertarget{classLogs_1_1models_1_1Log_a771ec9d718ac43090337eb410361c07f}\label{classLogs_1_1models_1_1Log_a771ec9d718ac43090337eb410361c07f}} 
+\index{Logs.models.Log@{Logs.models.Log}!LEVEL\_CHOICE@{LEVEL\_CHOICE}}
+\index{LEVEL\_CHOICE@{LEVEL\_CHOICE}!Logs.models.Log@{Logs.models.Log}}
+\doxysubsubsection{\texorpdfstring{LEVEL\_CHOICE}{LEVEL\_CHOICE}}
+{\footnotesize\ttfamily list Logs.\+models.\+Log.\+LEVEL\+\_\+\+CHOICE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  [}
+\DoxyCodeLine{        (\textcolor{stringliteral}{"{}INF"{}}, \textcolor{stringliteral}{"{}Information"{}}),}
+\DoxyCodeLine{        (\textcolor{stringliteral}{"{}WAR"{}}, \textcolor{stringliteral}{"{}Warning"{}}),}
+\DoxyCodeLine{        (\textcolor{stringliteral}{"{}ERR"{}}, \textcolor{stringliteral}{"{}Error"{}}),}
+\DoxyCodeLine{    ]}
+
+\end{DoxyCode}
+
+
+Definition at line 11 of file models.\+py.
+
+\mbox{\Hypertarget{classLogs_1_1models_1_1Log_acdd9a0af509bf0dfdb590a49b554b740}\label{classLogs_1_1models_1_1Log_acdd9a0af509bf0dfdb590a49b554b740}} 
+\index{Logs.models.Log@{Logs.models.Log}!registration\_time@{registration\_time}}
+\index{registration\_time@{registration\_time}!Logs.models.Log@{Logs.models.Log}}
+\doxysubsubsection{\texorpdfstring{registration\_time}{registration\_time}}
+{\footnotesize\ttfamily Logs.\+models.\+Log.\+registration\+\_\+time = models.\+Date\+Time\+Field(default=timezone.\+now, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 27 of file models.\+py.
+
+\mbox{\Hypertarget{classLogs_1_1models_1_1Log_a5d3eb88a3955c88835bce734cb3bacf9}\label{classLogs_1_1models_1_1Log_a5d3eb88a3955c88835bce734cb3bacf9}} 
+\index{Logs.models.Log@{Logs.models.Log}!text@{text}}
+\index{text@{text}!Logs.models.Log@{Logs.models.Log}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily Logs.\+models.\+Log.\+text = models.\+Char\+Field(max\+\_\+length=255, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 23 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Logs/\mbox{\hyperlink{Logs_2models_8py}{models.\+py}}\end{DoxyCompactItemize}

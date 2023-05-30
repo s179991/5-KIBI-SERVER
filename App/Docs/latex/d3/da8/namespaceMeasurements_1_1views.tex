@@ -1,0 +1,70 @@
+\hypertarget{namespaceMeasurements_1_1views}{}\doxysection{Measurements.\+views Namespace Reference}
+\label{namespaceMeasurements_1_1views}\index{Measurements.views@{Measurements.views}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceMeasurements_1_1views_a9db9decbba7f1740ef3f05ccd20cf184}{Device\+Measurement}} (request, T, RH, p, P, O, CO2)
+\begin{DoxyCompactList}\small\item\em Function called when querying http /device/measurement/. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceMeasurements_1_1views_a9db9decbba7f1740ef3f05ccd20cf184}\label{namespaceMeasurements_1_1views_a9db9decbba7f1740ef3f05ccd20cf184}} 
+\index{Measurements.views@{Measurements.views}!DeviceMeasurement@{DeviceMeasurement}}
+\index{DeviceMeasurement@{DeviceMeasurement}!Measurements.views@{Measurements.views}}
+\doxysubsubsection{\texorpdfstring{DeviceMeasurement()}{DeviceMeasurement()}}
+{\footnotesize\ttfamily def Measurements.\+views.\+Device\+Measurement (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{T,  }\item[{}]{RH,  }\item[{}]{p,  }\item[{}]{P,  }\item[{}]{O,  }\item[{}]{CO2 }\end{DoxyParamCaption})}
+
+
+
+Function called when querying http /device/measurement/. 
+
+Saves the values to the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & argument contains query data (headers, user, IP address and POST data). \\
+\hline
+{\em T} & Temperature value in Celcius \\
+\hline
+{\em RH} & Relative Humidity in \% (0-\/100) \\
+\hline
+{\em p} & Pressure value in Pa \\
+\hline
+{\em P} & Power consumption in W \\
+\hline
+{\em O} & Oxygen producing \\
+\hline
+{\em CO2} & Carbon\+Dioxide use value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+Http\+Response response to the device, containing information about the correctness of the Measurement saving. 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file views.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceMeasurements_1_1views_a9db9decbba7f1740ef3f05ccd20cf184}{DeviceMeasurement}}(request, T, RH, p, P, O, CO2):}
+\DoxyCodeLine{24     \textcolor{keywordflow}{if} request.method == \textcolor{stringliteral}{"{}POST"{}}:}
+\DoxyCodeLine{25         form = DeviceForm(request.POST)}
+\DoxyCodeLine{26         key = form.cleaned\_data.get(\textcolor{stringliteral}{"{}KEY"{}})}
+\DoxyCodeLine{27         IPAddress = request.META.get(\textcolor{stringliteral}{"{}REMOTE\_ADDR"{}})}
+\DoxyCodeLine{28         \textcolor{keywordflow}{if} key == SECRET\_KEY \textcolor{keywordflow}{and} Device.IsConnected(IPAddress):}
+\DoxyCodeLine{29             measurement = Measurement(}
+\DoxyCodeLine{30                 Temperature=T,}
+\DoxyCodeLine{31                 Humidity=RH,}
+\DoxyCodeLine{32                 Pressure=p,}
+\DoxyCodeLine{33                 Power=P,}
+\DoxyCodeLine{34                 Oxygen=O,}
+\DoxyCodeLine{35                 CarbonDioxide=CO2}
+\DoxyCodeLine{36             )}
+\DoxyCodeLine{37             measurement.save()}
+\DoxyCodeLine{38             \textcolor{keywordflow}{return} HttpResponse(status=200)}
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} HttpResponse(status=404)}
+\DoxyCodeLine{40 }
+
+\end{DoxyCode}

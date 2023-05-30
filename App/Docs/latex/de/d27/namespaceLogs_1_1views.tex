@@ -1,0 +1,54 @@
+\hypertarget{namespaceLogs_1_1views}{}\doxysection{Logs.\+views Namespace Reference}
+\label{namespaceLogs_1_1views}\index{Logs.views@{Logs.views}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceLogs_1_1views_aa07b838dc7d61146b2cd27ba910467c5}{Register\+Log}} (request, level, text)
+\begin{DoxyCompactList}\small\item\em Function called when querying http /log/level/text/. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceLogs_1_1views_aa07b838dc7d61146b2cd27ba910467c5}\label{namespaceLogs_1_1views_aa07b838dc7d61146b2cd27ba910467c5}} 
+\index{Logs.views@{Logs.views}!RegisterLog@{RegisterLog}}
+\index{RegisterLog@{RegisterLog}!Logs.views@{Logs.views}}
+\doxysubsubsection{\texorpdfstring{RegisterLog()}{RegisterLog()}}
+{\footnotesize\ttfamily def Logs.\+views.\+Register\+Log (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{level,  }\item[{}]{text }\end{DoxyParamCaption})}
+
+
+
+Function called when querying http /log/level/text/. 
+
+Saves the Log to the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & argument contains query data (headers, user, IP address and POST data).\\
+\hline
+{\em level} & log level (ERR, WAR, INF)\\
+\hline
+{\em text} & log information\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+Http\+Response response to the device, containing information about the correctness of the Log saving. 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file views.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceLogs_1_1views_aa07b838dc7d61146b2cd27ba910467c5}{RegisterLog}}(request, level, text):}
+\DoxyCodeLine{21     \textcolor{keywordflow}{if} request.method == \textcolor{stringliteral}{"{}POST"{}}:}
+\DoxyCodeLine{22         form = DeviceForm(request.POST)}
+\DoxyCodeLine{23         key = form.cleaned\_data.get(\textcolor{stringliteral}{"{}KEY"{}})}
+\DoxyCodeLine{24         IPAddress = request.META.get(\textcolor{stringliteral}{"{}REMOTE\_ADDR"{}})}
+\DoxyCodeLine{25         \textcolor{keywordflow}{if} key == SECRET\_KEY \textcolor{keywordflow}{and} Device.IsConnected(IPAddress):}
+\DoxyCodeLine{26             log = Log(level=level, text=text)}
+\DoxyCodeLine{27             log.save()}
+\DoxyCodeLine{28             \textcolor{keywordflow}{return} HttpResponse(status=200)}
+\DoxyCodeLine{29     \textcolor{keywordflow}{return} HttpResponse(status=404)}
+
+\end{DoxyCode}

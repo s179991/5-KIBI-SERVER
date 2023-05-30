@@ -1,0 +1,172 @@
+\hypertarget{classMeasurements_1_1models_1_1Measurement}{}\doxysection{Measurements.\+models.\+Measurement Class Reference}
+\label{classMeasurements_1_1models_1_1Measurement}\index{Measurements.models.Measurement@{Measurements.models.Measurement}}
+
+
+Database model for \mbox{\hyperlink{namespaceMeasurements}{Measurements}}.  
+
+
+
+
+Inheritance diagram for Measurements.\+models.\+Measurement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{d5/d30/classMeasurements_1_1models_1_1Measurement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Measurements.\+models.\+Measurement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{d7/dab/classMeasurements_1_1models_1_1Measurement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classMeasurements_1_1models_1_1Measurement_ab71683f59c70c25533a7858c2d497bb2}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Method that formats data when viewed in an administrator window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMeasurements_1_1models_1_1Measurement_a53c9832e72e67cc594b46ec245aef90e}{Humidity}} = models.\+Char\+Field(max\+\_\+length=20, null=False)
+\item 
+\mbox{\hyperlink{classMeasurements_1_1models_1_1Measurement_afdb2099ed2e673f2bb34c53b86a229e7}{Carbon\+Dioxide}} = models.\+Char\+Field(max\+\_\+length=20, null=False)
+\item 
+\mbox{\hyperlink{classMeasurements_1_1models_1_1Measurement_a999d4a781b41abc6cc02cd5fd7882896}{Oxygen}} = models.\+Char\+Field(max\+\_\+length=20, null=False)
+\item 
+\mbox{\hyperlink{classMeasurements_1_1models_1_1Measurement_a3f65d02b2322deabee29a0b1a77c4ad2}{Temperature}} = models.\+Char\+Field(max\+\_\+length=20, null=False)
+\item 
+\mbox{\hyperlink{classMeasurements_1_1models_1_1Measurement_a010895cde3e69dc0e94b7825a4850161}{Pressure}} = models.\+Char\+Field(max\+\_\+length=20, null=False)
+\item 
+\mbox{\hyperlink{classMeasurements_1_1models_1_1Measurement_aad5c30f05873e28be1fe1ef8d8a285ff}{Power}} = models.\+Char\+Field(max\+\_\+length=20, null=False)
+\item 
+\mbox{\hyperlink{classMeasurements_1_1models_1_1Measurement_a3fe38c5b8d830722b2ca989be5eb64bf}{registration\+\_\+time}} = models.\+Date\+Time\+Field(default=timezone.\+now, null=False)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Database model for \mbox{\hyperlink{namespaceMeasurements}{Measurements}}. 
+
+Base class\+: Model The base class that provides access to the format validation methods. 
+
+Definition at line 10 of file models.\+py.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMeasurements_1_1models_1_1Measurement_ab71683f59c70c25533a7858c2d497bb2}\label{classMeasurements_1_1models_1_1Measurement_ab71683f59c70c25533a7858c2d497bb2}} 
+\index{Measurements.models.Measurement@{Measurements.models.Measurement}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!Measurements.models.Measurement@{Measurements.models.Measurement}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def Measurements.\+models.\+Measurement.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Method that formats data when viewed in an administrator window. 
+
+\begin{DoxyReturn}{Returns}
+
+
+str formated data 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45     \textcolor{keyword}{def }\_\_str\_\_(self):}
+\DoxyCodeLine{46         date = dateformat.format(self.registration\_time, DATE\_FORMAT)}
+\DoxyCodeLine{47         str  = f\textcolor{stringliteral}{"{}Values: "{}}}
+\DoxyCodeLine{48         str += f\textcolor{stringliteral}{"{}Temperature: \{self.Temperature\} °C, "{}}}
+\DoxyCodeLine{49         str += f\textcolor{stringliteral}{"{}RH \{self.Humidity\}\%, "{}}}
+\DoxyCodeLine{50         str += f\textcolor{stringliteral}{"{}Pressure: \{self.Pressure\} Pa, "{}}}
+\DoxyCodeLine{51         str += f\textcolor{stringliteral}{"{}Oxygen: \{self.Oxygen\}\%, "{}}}
+\DoxyCodeLine{52         str += f\textcolor{stringliteral}{"{}CO2: \{self.CarbonDioxide\}\%, "{}}}
+\DoxyCodeLine{53         str += f\textcolor{stringliteral}{"{}Power: \{self.Power\} W "{}}}
+\DoxyCodeLine{54         str += f\textcolor{stringliteral}{"{}-\/> at time \{date\}"{}}}
+\DoxyCodeLine{55         \textcolor{keywordflow}{return} str}
+\DoxyCodeLine{56 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMeasurements_1_1models_1_1Measurement_afdb2099ed2e673f2bb34c53b86a229e7}\label{classMeasurements_1_1models_1_1Measurement_afdb2099ed2e673f2bb34c53b86a229e7}} 
+\index{Measurements.models.Measurement@{Measurements.models.Measurement}!CarbonDioxide@{CarbonDioxide}}
+\index{CarbonDioxide@{CarbonDioxide}!Measurements.models.Measurement@{Measurements.models.Measurement}}
+\doxysubsubsection{\texorpdfstring{CarbonDioxide}{CarbonDioxide}}
+{\footnotesize\ttfamily Measurements.\+models.\+Measurement.\+Carbon\+Dioxide = models.\+Char\+Field(max\+\_\+length=20, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 15 of file models.\+py.
+
+\mbox{\Hypertarget{classMeasurements_1_1models_1_1Measurement_a53c9832e72e67cc594b46ec245aef90e}\label{classMeasurements_1_1models_1_1Measurement_a53c9832e72e67cc594b46ec245aef90e}} 
+\index{Measurements.models.Measurement@{Measurements.models.Measurement}!Humidity@{Humidity}}
+\index{Humidity@{Humidity}!Measurements.models.Measurement@{Measurements.models.Measurement}}
+\doxysubsubsection{\texorpdfstring{Humidity}{Humidity}}
+{\footnotesize\ttfamily Measurements.\+models.\+Measurement.\+Humidity = models.\+Char\+Field(max\+\_\+length=20, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 11 of file models.\+py.
+
+\mbox{\Hypertarget{classMeasurements_1_1models_1_1Measurement_a999d4a781b41abc6cc02cd5fd7882896}\label{classMeasurements_1_1models_1_1Measurement_a999d4a781b41abc6cc02cd5fd7882896}} 
+\index{Measurements.models.Measurement@{Measurements.models.Measurement}!Oxygen@{Oxygen}}
+\index{Oxygen@{Oxygen}!Measurements.models.Measurement@{Measurements.models.Measurement}}
+\doxysubsubsection{\texorpdfstring{Oxygen}{Oxygen}}
+{\footnotesize\ttfamily Measurements.\+models.\+Measurement.\+Oxygen = models.\+Char\+Field(max\+\_\+length=20, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 19 of file models.\+py.
+
+\mbox{\Hypertarget{classMeasurements_1_1models_1_1Measurement_aad5c30f05873e28be1fe1ef8d8a285ff}\label{classMeasurements_1_1models_1_1Measurement_aad5c30f05873e28be1fe1ef8d8a285ff}} 
+\index{Measurements.models.Measurement@{Measurements.models.Measurement}!Power@{Power}}
+\index{Power@{Power}!Measurements.models.Measurement@{Measurements.models.Measurement}}
+\doxysubsubsection{\texorpdfstring{Power}{Power}}
+{\footnotesize\ttfamily Measurements.\+models.\+Measurement.\+Power = models.\+Char\+Field(max\+\_\+length=20, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 31 of file models.\+py.
+
+\mbox{\Hypertarget{classMeasurements_1_1models_1_1Measurement_a010895cde3e69dc0e94b7825a4850161}\label{classMeasurements_1_1models_1_1Measurement_a010895cde3e69dc0e94b7825a4850161}} 
+\index{Measurements.models.Measurement@{Measurements.models.Measurement}!Pressure@{Pressure}}
+\index{Pressure@{Pressure}!Measurements.models.Measurement@{Measurements.models.Measurement}}
+\doxysubsubsection{\texorpdfstring{Pressure}{Pressure}}
+{\footnotesize\ttfamily Measurements.\+models.\+Measurement.\+Pressure = models.\+Char\+Field(max\+\_\+length=20, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 27 of file models.\+py.
+
+\mbox{\Hypertarget{classMeasurements_1_1models_1_1Measurement_a3fe38c5b8d830722b2ca989be5eb64bf}\label{classMeasurements_1_1models_1_1Measurement_a3fe38c5b8d830722b2ca989be5eb64bf}} 
+\index{Measurements.models.Measurement@{Measurements.models.Measurement}!registration\_time@{registration\_time}}
+\index{registration\_time@{registration\_time}!Measurements.models.Measurement@{Measurements.models.Measurement}}
+\doxysubsubsection{\texorpdfstring{registration\_time}{registration\_time}}
+{\footnotesize\ttfamily Measurements.\+models.\+Measurement.\+registration\+\_\+time = models.\+Date\+Time\+Field(default=timezone.\+now, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 35 of file models.\+py.
+
+\mbox{\Hypertarget{classMeasurements_1_1models_1_1Measurement_a3f65d02b2322deabee29a0b1a77c4ad2}\label{classMeasurements_1_1models_1_1Measurement_a3f65d02b2322deabee29a0b1a77c4ad2}} 
+\index{Measurements.models.Measurement@{Measurements.models.Measurement}!Temperature@{Temperature}}
+\index{Temperature@{Temperature}!Measurements.models.Measurement@{Measurements.models.Measurement}}
+\doxysubsubsection{\texorpdfstring{Temperature}{Temperature}}
+{\footnotesize\ttfamily Measurements.\+models.\+Measurement.\+Temperature = models.\+Char\+Field(max\+\_\+length=20, null=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 23 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Measurements/\mbox{\hyperlink{Measurements_2models_8py}{models.\+py}}\end{DoxyCompactItemize}

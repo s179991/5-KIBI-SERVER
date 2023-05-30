@@ -1,0 +1,250 @@
+\hypertarget{classDevice_1_1models_1_1Device}{}\doxysection{Device.\+models.\+Device Class Reference}
+\label{classDevice_1_1models_1_1Device}\index{Device.models.Device@{Device.models.Device}}
+
+
+Database model for connected devices.  
+
+
+
+
+Inheritance diagram for Device.\+models.\+Device\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{d9/df3/classDevice_1_1models_1_1Device__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Device.\+models.\+Device\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{d5/db0/classDevice_1_1models_1_1Device__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classDevice_1_1models_1_1Device_a99a09e7a0d0473b42267f86c17ae7450}{Is\+Connected}} (self)
+\begin{DoxyCompactList}\small\item\em Method checks the connection status of the device instance. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classDevice_1_1models_1_1Device_ad81cd27311c97cf01fc3539006687f1a}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Method that formats data when viewed in an administrator window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classDevice_1_1models_1_1Device_a4edead4ed4dc4b8961d67a1077fc50f5}{Auth}} (Http\+Request request)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDevice_1_1models_1_1Device}{Device}} authorization function, checks the correctness of data sent via POST by device. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classDevice_1_1models_1_1Device_afccd11ffa02475c04bbe0bb57e90713a}{Disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Method disconnects the devices from the database. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classDevice_1_1models_1_1Device_af492a7a2e70a6a1a0d08668aa0fe85fc}{Connect}} (IPAddress, MACAddress)
+\begin{DoxyCompactList}\small\item\em Method connects the device to the database. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classDevice_1_1models_1_1Device_a681afd2bf59ef1fa06e26fb364c5a99b}{Is\+Connected}} (IPAddress)
+\begin{DoxyCompactList}\small\item\em Method checks the connection status of the device by indicated IP address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDevice_1_1models_1_1Device_a4feeb81675fd8cc506e51f33d8b90cf6}{IP}} = models.\+Generic\+IPAddress\+Field()
+\item 
+\mbox{\hyperlink{classDevice_1_1models_1_1Device_a832d1181551073bf325cbd11afe390e3}{MAC}} = models.\+Char\+Field(max\+\_\+length=20, null=True)
+\item 
+\mbox{\hyperlink{classDevice_1_1models_1_1Device_a66ff4c23c0c3ef8eba82488ccfc8bfe9}{connected\+\_\+time}} = models.\+Date\+Time\+Field(default=timezone.\+now)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Database model for connected devices. 
+
+Base class\+: Model The base class that provides access to the format validation methods. 
+
+Definition at line 12 of file models.\+py.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_ad81cd27311c97cf01fc3539006687f1a}\label{classDevice_1_1models_1_1Device_ad81cd27311c97cf01fc3539006687f1a}} 
+\index{Device.models.Device@{Device.models.Device}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def Device.\+models.\+Device.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Method that formats data when viewed in an administrator window. 
+
+\begin{DoxyReturn}{Returns}
+
+
+str formated data 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96     \textcolor{keyword}{def }\_\_str\_\_(self):}
+\DoxyCodeLine{97         date = dateformat.format(self.connected\_time, DATE\_FORMAT)}
+\DoxyCodeLine{98         \textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}IP: \{self.IP\}, connected at \{date\}"{}}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_a4edead4ed4dc4b8961d67a1077fc50f5}\label{classDevice_1_1models_1_1Device_a4edead4ed4dc4b8961d67a1077fc50f5}} 
+\index{Device.models.Device@{Device.models.Device}!Auth@{Auth}}
+\index{Auth@{Auth}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{Auth()}{Auth()}}
+{\footnotesize\ttfamily def Device.\+models.\+Device.\+Auth (\begin{DoxyParamCaption}\item[{Http\+Request}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{classDevice_1_1models_1_1Device}{Device}} authorization function, checks the correctness of data sent via POST by device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & argument contains query data (headers, user, IP address and POST data).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool, str, str\+: returns 3 values, authorization success, and the IP and MAC address of the device. 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_af492a7a2e70a6a1a0d08668aa0fe85fc}\label{classDevice_1_1models_1_1Device_af492a7a2e70a6a1a0d08668aa0fe85fc}} 
+\index{Device.models.Device@{Device.models.Device}!Connect@{Connect}}
+\index{Connect@{Connect}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{Connect()}{Connect()}}
+{\footnotesize\ttfamily def Device.\+models.\+Device.\+Connect (\begin{DoxyParamCaption}\item[{}]{IPAddress,  }\item[{}]{MACAddress }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method connects the device to the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IPAddress} & the IP address of the device to be connected \\
+\hline
+{\em MACAddress} & the MAC address of the device to be connected \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_afccd11ffa02475c04bbe0bb57e90713a}\label{classDevice_1_1models_1_1Device_afccd11ffa02475c04bbe0bb57e90713a}} 
+\index{Device.models.Device@{Device.models.Device}!Disconnect@{Disconnect}}
+\index{Disconnect@{Disconnect}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{Disconnect()}{Disconnect()}}
+{\footnotesize\ttfamily def Device.\+models.\+Device.\+Disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method disconnects the devices from the database. 
+
+
+
+Definition at line 50 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_a681afd2bf59ef1fa06e26fb364c5a99b}\label{classDevice_1_1models_1_1Device_a681afd2bf59ef1fa06e26fb364c5a99b}} 
+\index{Device.models.Device@{Device.models.Device}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{IsConnected()}{IsConnected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def Device.\+models.\+Device.\+Is\+Connected (\begin{DoxyParamCaption}\item[{}]{IPAddress }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method checks the connection status of the device by indicated IP address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IPAddress} & the IP address of the device to be check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+bool true if connected, otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_a99a09e7a0d0473b42267f86c17ae7450}\label{classDevice_1_1models_1_1Device_a99a09e7a0d0473b42267f86c17ae7450}} 
+\index{Device.models.Device@{Device.models.Device}!IsConnected@{IsConnected}}
+\index{IsConnected@{IsConnected}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{IsConnected()}{IsConnected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def Device.\+models.\+Device.\+Is\+Connected (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Method checks the connection status of the device instance. 
+
+\begin{DoxyReturn}{Returns}
+
+
+bool true if connected, otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file models.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_a66ff4c23c0c3ef8eba82488ccfc8bfe9}\label{classDevice_1_1models_1_1Device_a66ff4c23c0c3ef8eba82488ccfc8bfe9}} 
+\index{Device.models.Device@{Device.models.Device}!connected\_time@{connected\_time}}
+\index{connected\_time@{connected\_time}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{connected\_time}{connected\_time}}
+{\footnotesize\ttfamily Device.\+models.\+Device.\+connected\+\_\+time = models.\+Date\+Time\+Field(default=timezone.\+now)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 21 of file models.\+py.
+
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_a4feeb81675fd8cc506e51f33d8b90cf6}\label{classDevice_1_1models_1_1Device_a4feeb81675fd8cc506e51f33d8b90cf6}} 
+\index{Device.models.Device@{Device.models.Device}!IP@{IP}}
+\index{IP@{IP}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{IP}{IP}}
+{\footnotesize\ttfamily Device.\+models.\+Device.\+IP = models.\+Generic\+IPAddress\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 13 of file models.\+py.
+
+\mbox{\Hypertarget{classDevice_1_1models_1_1Device_a832d1181551073bf325cbd11afe390e3}\label{classDevice_1_1models_1_1Device_a832d1181551073bf325cbd11afe390e3}} 
+\index{Device.models.Device@{Device.models.Device}!MAC@{MAC}}
+\index{MAC@{MAC}!Device.models.Device@{Device.models.Device}}
+\doxysubsubsection{\texorpdfstring{MAC}{MAC}}
+{\footnotesize\ttfamily Device.\+models.\+Device.\+MAC = models.\+Char\+Field(max\+\_\+length=20, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 17 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Device/\mbox{\hyperlink{Device_2models_8py}{models.\+py}}\end{DoxyCompactItemize}

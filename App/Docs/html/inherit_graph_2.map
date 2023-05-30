@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,120,108"/>
+<area shape="rect" id="node2" href="$d7/d78/classDevice_1_1models_1_1Device.html" title="Database model for connected devices." alt="" coords="217,5,385,32"/>
+<area shape="rect" id="node3" href="$dc/d8a/classLogs_1_1models_1_1Log.html" title="Database model for device logs." alt="" coords="235,56,366,83"/>
+<area shape="rect" id="node4" href="$dc/dd4/classMeasurements_1_1models_1_1Measurement.html" title="Database model for Measurements." alt="" coords="168,107,433,133"/>
+<area shape="rect" id="node5" href="$d3/d51/classPublications_1_1models_1_1Publication.html" title=" " alt="" coords="186,157,415,184"/>
+</map>

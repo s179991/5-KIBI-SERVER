@@ -1,0 +1,84 @@
+\hypertarget{namespaceDevice_1_1views}{}\doxysection{Device.\+views Namespace Reference}
+\label{namespaceDevice_1_1views}\index{Device.views@{Device.views}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceDevice_1_1views_a5e0d88208d7e07fd706bcb3d1d47a78f}{Device\+Connect}} (request)
+\begin{DoxyCompactList}\small\item\em Function called with http /connected request. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceDevice_1_1views_a0c61173aacadce2bd8ce64cdd2487f02}{Device\+Disconnect}} (request)
+\begin{DoxyCompactList}\small\item\em Function called with http /disconnected request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceDevice_1_1views_a5e0d88208d7e07fd706bcb3d1d47a78f}\label{namespaceDevice_1_1views_a5e0d88208d7e07fd706bcb3d1d47a78f}} 
+\index{Device.views@{Device.views}!DeviceConnect@{DeviceConnect}}
+\index{DeviceConnect@{DeviceConnect}!Device.views@{Device.views}}
+\doxysubsubsection{\texorpdfstring{DeviceConnect()}{DeviceConnect()}}
+{\footnotesize\ttfamily def Device.\+views.\+Device\+Connect (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+Function called with http /connected request. 
+
+It checks the correctness of data in the POST method and authorizes the device by saving it in the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & argument contains query data (headers, user, IP address and POST data).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+Http\+Response response to the device, containing information about the correctness of the connection to the API. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file views.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceDevice_1_1views_a5e0d88208d7e07fd706bcb3d1d47a78f}{DeviceConnect}}(request):}
+\DoxyCodeLine{23     \textcolor{keywordflow}{if} request.method == \textcolor{stringliteral}{"{}POST"{}}:}
+\DoxyCodeLine{24         success, IPAddress, MACAddress = Device.Auth(request)}
+\DoxyCodeLine{25         \textcolor{keywordflow}{if} success:}
+\DoxyCodeLine{26             Device.Connect()}
+\DoxyCodeLine{27             Log.Info(f\textcolor{stringliteral}{"{}Connected device from IP '\{IPAddress\}' and MAC '\{MACAddress\}'"{}})}
+\DoxyCodeLine{28             \mbox{\hyperlink{namespaceApp_1_1ConnectionTracking_a630fb0fb1204e45503c3f7caaafd74dc}{ConnectionTracking}}(IPAddress, MACAddress)}
+\DoxyCodeLine{29             \textcolor{keywordflow}{return} HttpResponse(status=HTTPStatus.ACCEPTED)}
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} HttpResponse(status=HTTPStatus.UNAUTHORIZED)}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{@csrf\_exempt}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceDevice_1_1views_a0c61173aacadce2bd8ce64cdd2487f02}\label{namespaceDevice_1_1views_a0c61173aacadce2bd8ce64cdd2487f02}} 
+\index{Device.views@{Device.views}!DeviceDisconnect@{DeviceDisconnect}}
+\index{DeviceDisconnect@{DeviceDisconnect}!Device.views@{Device.views}}
+\doxysubsubsection{\texorpdfstring{DeviceDisconnect()}{DeviceDisconnect()}}
+{\footnotesize\ttfamily def Device.\+views.\+Device\+Disconnect (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+Function called with http /disconnected request. 
+
+It checks the correctness of data in the POST method and authorizes the device by removing it in the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & argument contains query data (headers, user, IP address and POST data).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+Http\+Response response to the device, containing information about the correctness of the connection to the API. 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file views.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}

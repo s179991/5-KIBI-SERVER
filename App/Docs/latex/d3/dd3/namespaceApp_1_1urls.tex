@@ -1,0 +1,33 @@
+\hypertarget{namespaceApp_1_1urls}{}\doxysection{App.\+urls Namespace Reference}
+\label{namespaceApp_1_1urls}\index{App.urls@{App.urls}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespaceApp_1_1urls_afe71f4c0290d121318397513eb2433e7}{urlpatterns}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceApp_1_1urls_afe71f4c0290d121318397513eb2433e7}\label{namespaceApp_1_1urls_afe71f4c0290d121318397513eb2433e7}} 
+\index{App.urls@{App.urls}!urlpatterns@{urlpatterns}}
+\index{urlpatterns@{urlpatterns}!App.urls@{App.urls}}
+\doxysubsubsection{\texorpdfstring{urlpatterns}{urlpatterns}}
+{\footnotesize\ttfamily list App.\+urls.\+urlpatterns}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     path(\textcolor{stringliteral}{''}, include(\textcolor{stringliteral}{'Dashboard.urls'})),}
+\DoxyCodeLine{3     path(\textcolor{stringliteral}{'admin'}, admin.site.urls, name=\textcolor{stringliteral}{'admin'}),}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5     path(\textcolor{stringliteral}{'device/'}, include(\textcolor{stringliteral}{'Device.urls'})),}
+\DoxyCodeLine{6     path(\textcolor{stringliteral}{'device/'}, include(\textcolor{stringliteral}{'Measurements.urls'})),}
+\DoxyCodeLine{7     path(\textcolor{stringliteral}{'device/'}, include(\textcolor{stringliteral}{'Logs.urls'})),}
+\DoxyCodeLine{8     path(\textcolor{stringliteral}{'docs'}, include(\textcolor{stringliteral}{'docs.urls'})),}
+\DoxyCodeLine{9 ]}
+
+\end{DoxyCode}
+
+
+Definition at line 4 of file urls.\+py.
+

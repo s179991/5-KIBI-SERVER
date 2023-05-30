@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,148,93,175"/>
+<area shape="rect" id="node2" href="$dd/d3a/classAboutUs_1_1apps_1_1AboutusConfig.html" title=" " alt="" coords="163,5,374,32"/>
+<area shape="rect" id="node3" href="$d5/dab/classDashboard_1_1apps_1_1DashboardConfig.html" title=" " alt="" coords="168,57,369,98"/>
+<area shape="rect" id="node4" href="$d8/d7b/classDevice_1_1apps_1_1DeviceConfig.html" title="Class used to configure the django framework&#39;s Device application." alt="" coords="173,123,365,149"/>
+<area shape="rect" id="node5" href="$df/da7/classLogs_1_1apps_1_1LogsConfig.html" title="Class used to configure the django framework&#39;s Logs application." alt="" coords="187,173,350,200"/>
+<area shape="rect" id="node6" href="$de/d23/classMeasurements_1_1apps_1_1MeasurementsConfig.html" title="Class used to configure the django framework&#39;s Measurements application." alt="" coords="141,225,396,266"/>
+<area shape="rect" id="node7" href="$d0/dcb/classPublications_1_1apps_1_1PublicationsConfig.html" title=" " alt="" coords="159,290,378,331"/>
+</map>

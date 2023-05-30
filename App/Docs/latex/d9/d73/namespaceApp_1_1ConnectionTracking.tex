@@ -1,0 +1,126 @@
+\hypertarget{namespaceApp_1_1ConnectionTracking}{}\doxysection{App.\+Connection\+Tracking Namespace Reference}
+\label{namespaceApp_1_1ConnectionTracking}\index{App.ConnectionTracking@{App.ConnectionTracking}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceApp_1_1ConnectionTracking_aeb46301a15fba7835bc2a50d1e8649a2}{get\+\_\+ip}} ()
+\begin{DoxyCompactList}\small\item\em Function returns the IP address of server. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceApp_1_1ConnectionTracking_a9b2991436e48ef18ae75100dded5ec31}{device\+\_\+disconnect}} (KEY, MAC, HOST)
+\begin{DoxyCompactList}\small\item\em A function that sends a request to the server to disconnect a device that has been detected as not in the network. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceApp_1_1ConnectionTracking_a630fb0fb1204e45503c3f7caaafd74dc}{Connection\+Tracking}} (HOST, MAC)
+\begin{DoxyCompactList}\small\item\em Function runs a subprocess that tracks the device\textquotesingle{}s connection to the network. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceApp_1_1ConnectionTracking_af9eb43bdde2ed47d860c218bcfc7f670}{Connection\+Tracking\+Thread}} (HOST, MAC)
+\begin{DoxyCompactList}\small\item\em Subprocess function, cyclically polls the end device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceApp_1_1ConnectionTracking_a630fb0fb1204e45503c3f7caaafd74dc}\label{namespaceApp_1_1ConnectionTracking_a630fb0fb1204e45503c3f7caaafd74dc}} 
+\index{App.ConnectionTracking@{App.ConnectionTracking}!ConnectionTracking@{ConnectionTracking}}
+\index{ConnectionTracking@{ConnectionTracking}!App.ConnectionTracking@{App.ConnectionTracking}}
+\doxysubsubsection{\texorpdfstring{ConnectionTracking()}{ConnectionTracking()}}
+{\footnotesize\ttfamily def App.\+Connection\+Tracking.\+Connection\+Tracking (\begin{DoxyParamCaption}\item[{}]{HOST,  }\item[{}]{MAC }\end{DoxyParamCaption})}
+
+
+
+Function runs a subprocess that tracks the device\textquotesingle{}s connection to the network. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em HOST} & \mbox{\hyperlink{namespaceDevice}{Device}} IP address\\
+\hline
+{\em MAC} & \mbox{\hyperlink{namespaceDevice}{Device}} MAC address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file Connection\+Tracking.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceApp_1_1ConnectionTracking_a630fb0fb1204e45503c3f7caaafd74dc}{ConnectionTracking}}(HOST, MAC):}
+\DoxyCodeLine{51     CONNECTION\_TRACKING\_STOP\_EVENT.clear()}
+\DoxyCodeLine{52     thread = Thread(target=ConnectionTrackingThread, args=(HOST, MAC))}
+\DoxyCodeLine{53     thread.start()}
+\DoxyCodeLine{54 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceApp_1_1ConnectionTracking_af9eb43bdde2ed47d860c218bcfc7f670}\label{namespaceApp_1_1ConnectionTracking_af9eb43bdde2ed47d860c218bcfc7f670}} 
+\index{App.ConnectionTracking@{App.ConnectionTracking}!ConnectionTrackingThread@{ConnectionTrackingThread}}
+\index{ConnectionTrackingThread@{ConnectionTrackingThread}!App.ConnectionTracking@{App.ConnectionTracking}}
+\doxysubsubsection{\texorpdfstring{ConnectionTrackingThread()}{ConnectionTrackingThread()}}
+{\footnotesize\ttfamily def App.\+Connection\+Tracking.\+Connection\+Tracking\+Thread (\begin{DoxyParamCaption}\item[{}]{HOST,  }\item[{}]{MAC }\end{DoxyParamCaption})}
+
+
+
+Subprocess function, cyclically polls the end device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em HOST} & \mbox{\hyperlink{namespaceDevice}{Device}} IP address\\
+\hline
+{\em MAC} & \mbox{\hyperlink{namespaceDevice}{Device}} MAC address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file Connection\+Tracking.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceApp_1_1ConnectionTracking_a9b2991436e48ef18ae75100dded5ec31}\label{namespaceApp_1_1ConnectionTracking_a9b2991436e48ef18ae75100dded5ec31}} 
+\index{App.ConnectionTracking@{App.ConnectionTracking}!device\_disconnect@{device\_disconnect}}
+\index{device\_disconnect@{device\_disconnect}!App.ConnectionTracking@{App.ConnectionTracking}}
+\doxysubsubsection{\texorpdfstring{device\_disconnect()}{device\_disconnect()}}
+{\footnotesize\ttfamily def App.\+Connection\+Tracking.\+device\+\_\+disconnect (\begin{DoxyParamCaption}\item[{}]{KEY,  }\item[{}]{MAC,  }\item[{}]{HOST }\end{DoxyParamCaption})}
+
+
+
+A function that sends a request to the server to disconnect a device that has been detected as not in the network. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em KEY} & API secret Key\\
+\hline
+{\em MAC} & \mbox{\hyperlink{namespaceDevice}{Device}} MAC address\\
+\hline
+{\em HOST} & \mbox{\hyperlink{namespaceDevice}{Device}} IP address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str Server response 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Connection\+Tracking.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceApp_1_1ConnectionTracking_aeb46301a15fba7835bc2a50d1e8649a2}\label{namespaceApp_1_1ConnectionTracking_aeb46301a15fba7835bc2a50d1e8649a2}} 
+\index{App.ConnectionTracking@{App.ConnectionTracking}!get\_ip@{get\_ip}}
+\index{get\_ip@{get\_ip}!App.ConnectionTracking@{App.ConnectionTracking}}
+\doxysubsubsection{\texorpdfstring{get\_ip()}{get\_ip()}}
+{\footnotesize\ttfamily def App.\+Connection\+Tracking.\+get\+\_\+ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function returns the IP address of server. 
+
+\begin{DoxyReturn}{Returns}
+
+
+str IP address of server 
+\end{DoxyReturn}
+
+
+Definition at line 12 of file Connection\+Tracking.\+py.
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
